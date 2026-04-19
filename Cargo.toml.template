@@ -1,0 +1,21 @@
+[package]
+name = "{{project-name}}"
+authors = ["{{authors}}"]
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+# Mark as its own workspace root so it doesn't get pulled into
+# whatever parent workspace the user happens to scaffold under.
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+# Intentionally empty. `bevy` and `jackdaw_api` are injected via
+# `--extern` flags by the jackdaw editor's **File > Extensions >
+# Build from project folder…** action, so you don't declare them
+# here. You can still `use bevy::prelude::*;` and
+# `use jackdaw_api::prelude::*;` — those names resolve at compile
+# time through the editor-supplied SDK.
+[dependencies]

@@ -1,0 +1,22 @@
+# {{project-name | title_case}}
+
+A jackdaw extension generated from the
+[jackdaw-template-extension](https://github.com/jbuehler23/jackdaw_template_extension)
+template.
+
+## Build and install
+
+1. Open jackdaw.
+2. **File → Extensions → Build from project folder…**
+3. Select this project's root directory.
+
+No cargo commands, no custom scripts — jackdaw runs the build for
+you and live-loads the result.
+
+## Why `[dependencies]` is empty
+
+Jackdaw injects `bevy` and `jackdaw_api` via `rustc --extern` at
+build time, so they resolve through the editor's shared SDK
+without being declared here. Add other crates.io dependencies
+under `[dependencies]` as normal. Just don't add `bevy` or
+`jackdaw_api` yourself — the editor provides them.
