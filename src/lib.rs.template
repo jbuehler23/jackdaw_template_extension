@@ -2,8 +2,12 @@
 
 use std::sync::Arc;
 
+// `use bevy::prelude::*` reaches everything — jackdaw's SDK proxy
+// exposes bevy primitives and jackdaw extension APIs
+// (`JackdawExtension`, `ExtensionContext`, `WindowDescriptor`, …)
+// through a single unified prelude. No need for a separate
+// `use jackdaw_api::prelude::*;`.
 use bevy::prelude::*;
-use jackdaw_api::prelude::*;
 
 pub struct {{crate_name | pascal_case}};
 
